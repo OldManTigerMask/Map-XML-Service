@@ -1,0 +1,149 @@
+<map proto="1.4.0">
+<name>Doneit I</name>
+<version>1.0</version>
+<objective>Capture the enemy flag to win.</objective>
+<authors>
+    <author uuid=" 243addcd-f2f6-4239-a3de-3955e0ac09f6"/> <!-- SaskueeHD -->
+    <author uuid=" 30682050-6061-4b4f-8518-473121681a1c"/> <!-- Rush4you -->
+</authors>
+<contributors>
+    <contributor uuid="4b50f555-29e0-4fd7-aef8-d20a157df16e" contribution="XML"/> <!-- OldManTigerMask -->
+</contributors>
+<teams>
+    <team id="lime" color="lime" min="1" max="8">Lime</team>
+    <team id="orange" color="gold" min="1" max="8">Orange</team>
+</teams>
+<spawns>
+    <spawn team="lime" kit="lime">
+        <!-- Replace the X, Y & Z with the coordinates of the LIME spawn, the specific block where they spawn-->
+        <regions yaw="180"><block>X, Y, Z</block></regions>
+    </spawn>
+    <spawn team="orange" kit="orange">
+        <!-- Replace the X, Y, Z with the coordinates of the ORANGE spawn, the specific block where they spawn -->
+        <regions yaw="90"><block>X, Y, Z</block></regions>
+    </spawn>
+    </default>
+        </regions>
+</spawns>
+<kits>
+    <kit id="spawnKit">
+       <!-- I can do this part for you if you could take a screenshot of your inventory with the starter kit (what users spawn with). I'll still explain what these components are but you can just let me do it to take the pressure of you.  -->
+        <item slot="0" amount="(AMOUNT OF ITEM)">item</item> 
+        <!-- Refering above, Slot 1, please specify the item you want users to have in slot one. (if it is a weapon please put instead of amount, damage="-3000" -->
+        <item slot="1" amount="(AMOUNT OF ITEM)">bow</item>
+        <!-- Refering above, Slot 2, please specify the item you want users to have in slot two. (if it is a weapon please put instead of amount, damage="-3000" -->
+        <item slot="2" amount="(AMOUNT OF ITEM)">Item</item>
+        <!-- Refering above, Slot 3, please specify the item you want users to have in slot three. (if it is a weapon please put instead of amount, damage="-3000" -->
+<!-- You get the point, if you would like more slots please feel free to copy the template above and paste it below. For the slot code refer to this. -->
+        <leggings damage="-3000">(TYPE OF LEGGINGS) leggings</leggings>
+        <!-- This is the amour section, here is the leggings. Please put between the brackets the type of leggings -->
+        <boots damage="-3000">iron boots</boots>
+        <!-- This is the amour section, here is the boots. Please put between the brackets the type of BOOTS -->
+    <kit id="lime" parents="spawnKit">
+    </kit>
+        <helmet color="2a9f1c" damage="-3000">leather helmet</helmet>
+        <!-- This makes the leather helmet lime, if your on the lime team. -->
+        <chestplate color="2a9f1c" damage="-3000">leather chestplate</chestplate>
+        <!-- This makes the leather chestplate lime, if your on the lime team. -->
+    </kit>
+    <kit id="orange" parents="spawnKit">
+        <helmet color="e26600" damage="-3000">leather helmet</helmet>
+        <!-- This makes the leather helmet orange, if your on the orange team. -->
+        <chestplate color="e26600" damage="-3000">leather chestplate</chestplate>
+        <!-- This makes the leather helmet orange, if your on the orange team. -->
+    </kit>
+
+    <kit id="lime-flag-kit">
+        <potion duration="oo" amplifier="-2" ambient="true">health boost</potion>
+        <potion duration="oo">slowness</potion>
+         <!-- All capture the flag maps generally have this slowness effect when you grab the wool -->
+    </kit>
+    <kit id="orange-flag-kit">
+        <potion duration="oo" amplifier="-2" ambient="true">health boost</potion>
+        <potion duration="oo">slowness</potion>
+         <!-- All capture the flag maps generally have this slowness effect when you grab the wool -->
+    </kit>
+    </kit>
+    <kit id="reset-kit" force="true">
+        <potion duration="1" amplifier="0">health boost</potion>
+        <potion duration="0" amplifier="10">slowness</potion>
+         <!-- All capture the flag maps generally have this slowness effect when you grab the wool -->
+</kits>
+<filters>
+    <team id="lime-only">lime</team>
+    <!-- Team Referencing -->
+    <team id="orange-only">orange</team>
+    <!-- Team Referencing -->
+    <time id="flag-respawns">1m</time>
+    <!-- If the flag is dropped it will take 1 minute to respawn. -->
+    <filter name="no-lime" parents="deny-all">
+        <allow><team>orange</team></allow>
+      <!-- Prevents Orange from entering spawn-->
+    </filter>
+    <filter name="no-orange" parents="deny-all">
+        <allow><team>lime</team></allow>
+        <!-- Prevents Orange from entering spawn-->
+    </filter>
+</filters>
+<regions>
+    <cylinder id="lime-net" base="X, Y, Z" radius="2" height="2" />
+    <cylinder id="red-net" base="-41.5,52,0.5" radius="2" height="2" />
+    <apply block="deny-all">
+        <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+</regions>
+
+<flags flag-proximity-metric="closest player">
+    <flag id="red-flag" name="Red Flag" owner="red" pickup-kit="red-flag-kit" drop-kit="reset-kit">
+        <post pickup-filter="purple-only" recover-time="15s" respawn-time="5s">42.5,52,0.5</post>
+    </flag>
+    <flag id="purple-flag" name="Purple Flag" owner="purple" pickup-kit="purple-flag-kit" drop-kit="reset-kit">>
+        <post pickup-filter="red-only" recover-time="15s" respawn-time="5s">-41.5,52,0.5</post>
+    </flag>
+    <flags points="1">
+        <net region="red-net" flag="purple-flag" respawn-filter="flag-respawns"/>
+        <net region="purple-net" flag="red-flag" respawn-filter="flag-respawns"/>
+    </flags>
+</flags>
+        <monuments materials="obsidian" fireworks="true">
+            <monuments owner="lime">
+                <monument id="lime-left" name="Left">
+                    <!-- Replace the X, Y, Z with the location of the monument -->
+                    <region><point>X, Y, Z</point></region>
+                </monument>
+                <monument id="red-bottom" name="Bottom">
+                    <region><cuboid min="-633, 25, -882" max="-637, 33, -878"/></region>
+                </monument>
+            </monuments>
+            <monuments owner="blue">
+                <monument id="blue-top" name="Top">
+                    <region><cuboid min="-588, 49, -670" max="-534, 57, -674"/></region>
+                </monument>
+                <monument id="blue-bottom" name="Bottom">
+                    <region><cuboid min="-577, 25, -690" max="-573, 33, -694"/></region>
+                </monument>
+            </monuments>
+        </monuments>
+</objectives>
+<time>15m</time>
+<score>
+    <limit>1</limit>
+    <kills>0</kills>
+    <deaths>0</deaths>
+</score>
+<itemremove>
+    <item>golden carrot</item>
+    <item>iron sword</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>chainmail leggings</item>
+    <item>iron boots</item>
+    <item>arrow</item>
+</itemremove>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<timelock>on</timelock>
+</map>
+
