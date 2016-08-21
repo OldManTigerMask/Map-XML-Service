@@ -1,0 +1,95 @@
+<map name="Cobweb Hills" version="1.0.0" description="sdfd">
+<include src="defaults.xml"/>
+<authors>
+<author uuid="d9b4ffbc11d0453aa93f82dc59fca4b6"/>
+<!--  Wulfcaspice  -->
+<author uuid="ec00f0bb1c4548768f112b033b35c7e2"/>
+<!--  Arigenn  -->
+</authors>
+<teams>
+<team id="red" color="red" min="10" max="25">{colors.red}</team>
+<team id="blue" color="blue" min="10" max="25">{colors.blue}</team>
+</teams>
+<spawns respawn-delay="5s" auto-respawn="false" respawn-freeze="true">
+<spawn team="spectators">
+<regions>
+<cuboid min="-67, 79, -57" max="-69, 79, -59"/>
+</regions>
+</spawn>
+<spawn team="red" yaw="90" loadout="default">
+<regions>
+<block>-3, 67, 1</block>
+</regions>
+</spawn>
+<spawn team="blue" yaw="-90" loadout="default">
+<regions>
+<block>-133, 67, 1</block>
+</regions>
+</spawn>
+<region>
+<zone modify="never">
+<cuboid min="-8, 64, -3" max="-1, 73, 5"/>
+<cuboid min="-128, 64, 5" max="135, 73, -3"/>
+</zone>
+</region>
+</spawns>
+<world>
+<gamerules>
+<doDaylightCycle>false</doDaylightCycle>
+</gamerules>
+</world>
+<loadouts>
+<loadout id="default">
+<effect duration="5s">damage resistance</effect>
+<helmet material="iron helmet"/>
+<chestplate material="leather chestplate" team-color="true"/>
+<item slot="0" material="stone sword"/>
+<item slot="1" material="bow" enchantments="arrow infinite:1"/>
+<item slot="2" material="diamond pickaxe" enchantments="dig speed:1"/>
+<item slot="3" material="iron axe" enchantments="dig speed:1"/>
+<item slot="4" material="log" amount="16"/>
+<item slot="5" material="gravel" amount="8"/>
+<item slot="6" material="cooked beef" amount="16"/>
+<item slot="7" material="golden apple"/>
+<item slot="8" material="arrow" amount="16"/>
+</loadout>
+</loadouts>
+<objectives>
+<wools team="red" pickup="false">
+<wool color="yellow">
+<source>
+<block>-122, 64, 49</block>
+</source>
+<destination>
+<block>-1, 68, 0</block>
+</destination>
+</wool>
+<wool color="lime">
+<source>
+<block>-122, 64, -48</block>
+</source>
+<destination>
+<block>-1, 68, 1</block>
+</destination>
+</wool>
+</wools>
+<wools team="blue">
+<wool color="orange">
+<source>
+<block>-14, 64, 49</block>
+</source>
+<destination>
+<block>-137, 68, 0</block>
+</destination>
+</wool>
+<wool color="cyan">
+<source>
+<block>-14, 64, -48</block>
+</source>
+<destination>
+<block>-137, 68, 1</block>
+</destination>
+</wool>
+</wools>
+</objectives>
+</map>
