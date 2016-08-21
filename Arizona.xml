@@ -1,0 +1,217 @@
+<map name="Arizona" version="1.0.0" description="A sandy-hot CTW map with 2 wools per side.">
+<include src="defaults.xml"/>
+<authors>
+<author uuid="da98a2f1673c4cecb547e0a342abfde4" role="The author of the map."/>
+<!--  timaeusTestified  -->
+<author uuid="f866f3863d9d493c8de887b493cab8be" role="Hosted the build server."/>
+<!--  alexanderjoe  -->
+</authors>
+<teams>
+<team id="purple" color="purple" min="16" max="21">{colors.purple}</team>
+<team id="yellow" color="yellow" min="16" max="21">{colors.yellow}</team>
+</teams>
+<spawns>
+<spawn team="spectators" yaw="180">
+<regions>
+<block>120, 142, 43</block>
+</regions>
+</spawn>
+<spawn team="purple" yaw="90" loadout="default">
+<regions>
+<block>12, 106, -53</block>
+</regions>
+</spawn>
+<spawn team="yellow" yaw="90" loadout="default">
+<regions>
+<block>227, 106, -53</block>
+</regions>
+</spawn>
+</spawns>
+<zones>
+<playable>
+<region>
+<cuboid min="242, 100, -117" max="-2, 129, 10"/>
+</region>
+</playable>
+<zone modify="never">
+<region>
+<sphere origin="120, 142, 42" radius="5"/>
+<!--  Spectator Spawn Region  -->
+<cylinder base="12, 100, -53" radius="9" height="29"/>
+<!--  Purple Spawn Region  -->
+<cuboid min="56, 100, -40" max="72, 129, -46"/>
+<!--  Void Break on Purple 1  -->
+<cuboid min="72, 100, -68" max="56, 129, -62"/>
+<!--  Void Break on Purple 2  -->
+<cylinder base="227, 100, -53" radius="9" height="29"/>
+<!--  Yellow Spawn Region  -->
+<cuboid min="183, 100, -68" max="167, 129, -62"/>
+<!--  Void Break on Yellow 1  -->
+<cuboid min="167, 100, -40" max="183, 129, -46"/>
+<!--  Void Break on Yellow 2  -->
+<cuboid min="43, 104, -113" max="55, 129, -101"/>
+<!--  Room is Wool Cyan  -->
+<cuboid min="196, 100, -7" max="184, 129, 5"/>
+<!--  Room is Wool Lime  -->
+<cuboid min="38, 100, 5" max="55, 129, -7"/>
+<!--  Room is Wool Blue  -->
+<cuboid min="196, 100, -113" max="184, 129, -101"/>
+<!--  Room is Wool Green  -->
+<cuboid min="213, 100, -42" max="203, 129, -20"/>
+<!--  Void Restriction Region 1  -->
+<cuboid min="202, 100, -30" max="202, 129, -20"/>
+<!--  Void Restriction Region 2  -->
+<cuboid min="201, 100, -30" max="179, 129, -8"/>
+<!--  Void Restriction Region 3  -->
+<cuboid min="183, 100, -18" max="161, 129, 5"/>
+<!--  Void Restriction Region 4  -->
+<cuboid min="213, 100, -66" max="203, 129, -88"/>
+<!--  Void Restriction Region 5  -->
+<cuboid min="202, 100, -88" max="202, 129, -78"/>
+<!--  Void Restriction Region 6  -->
+<cuboid min="201, 100, -78" max="179, 129, -100"/>
+<!--  Void Restriction Region 7  -->
+<cuboid min="183, 100, -90" max="161, 129, -113"/>
+<!--  Void Restriction Region 8  -->
+<cuboid min="26, 100, -66" max="36, 129, -88"/>
+<!--  Void Restriction Region 9  -->
+<cuboid min="37, 100, -78" max="37, 129, -88"/>
+<!--  Void Restriction Region 10  -->
+<cuboid min="38, 100, -78" max="60, 129, -100"/>
+<!--  Void Restriction Region 11  -->
+<cuboid min="56, 100, -90" max="78, 129, -113"/>
+<!--  Void Restriction Region 12  -->
+<cuboid min="26, 100, -66" max="36, 129, -88"/>
+<!--  Void Restriction Region 9  -->
+<cuboid min="37, 100, -78" max="37, 129, -88"/>
+<!--  Void Restriction Region 10  -->
+<cuboid min="38, 100, -78" max="60, 129, -100"/>
+<!--  Void Restriction Region 11  -->
+<cuboid min="56, 100, -90" max="78, 129, -113"/>
+<!--  Void Restriction Region 12  -->
+<cuboid min="26, 100, -42" max="36, 129, -20"/>
+<!--  Void Restriction Region 13  -->
+<cuboid min="37, 100, -20" max="37, 129, -30"/>
+<!--  Void Restriction Region 14  -->
+<cuboid min="38, 100, -30" max="60, 129, -8"/>
+<!--  Void Restriction Region 15  -->
+<cuboid min="56, 100, -18" max="78, 129, 5"/>
+<!--  Void Restriction Region 16  -->
+<cuboid min="141, 100, -42" max="98, 129, -31"/>
+<!--  Front Lines Restrict Region 17  -->
+<cuboid min="92, 100, -30" max="147, 129, -20"/>
+<!--  Front Lines Restrict Region 18  -->
+<cuboid min="98, 100, -77" max="141, 129, -66"/>
+<!--  Front Lines Restrict Region 19  -->
+<cuboid min="147, 100, -78" max="92, 129, -88"/>
+<!--  Front Lines Restrict Region 20  -->
+</region>
+</zone>
+<!--   yellow woolrooms   -->
+<zone modify="always">
+<enter>
+<team>purple</team>
+</enter>
+<region>
+<cuboid min="196, 100, -7" max="184, 129, 5"/>
+<!--  Room is Wool Lime  -->
+<cuboid min="196, 100, -113" max="184, 124, -101"/>
+<!--  Room is Wool Green  -->
+</region>
+<message>{errors.enemy-base}</message>
+</zone>
+<!--   purple woolrooms   -->
+<zone modify="always">
+<enter>
+<team>yellow</team>
+</enter>
+<region>
+<cuboid min="43, 104, -113" max="55, 129, -101"/>
+<!--  Room is Wool Cyan  -->
+<cuboid min="38, 100, 5" max="55, 129, -7"/>
+<!--  Room is Wool Blue  -->
+</region>
+<message>{errors.enemy-base}</message>
+</zone>
+<zone enter="never">
+<region>
+<cuboid min="234, 107, -57" max="236, 110, -51"/>
+<!--  Prevent standing  -->
+<cuboid min="5, 107, -51" max="3, 110, -57"/>
+<!--  Prevent standing 2  -->
+</region>
+</zone>
+</zones>
+<loadouts>
+<loadout id="default">
+<effect duration="5s">damage resistance</effect>
+<helmet material="leather helmet" team-color="true"/>
+<chestplate material="leather chestplate" team-color="true"/>
+<leggings material="leather leggings" team-color="true"/>
+<boots material="leather boots" team-color="true"/>
+<item slot="0" material="iron sword"/>
+<item slot="1" material="bow" enchantments="arrow infinite:1"/>
+<item slot="2" material="diamond pickaxe"/>
+<item slot="3" material="iron axe"/>
+<item slot="4" material="log" amount="64"/>
+<item slot="5" material="glass" amount="64"/>
+<item slot="6" material="apple" amount="32"/>
+<item slot="7" material="golden apple"/>
+<item slot="8" material="arrow" amount="16"/>
+<item slot="29" material="iron spade"/>
+<item slot="30" material="bucket"/>
+</loadout>
+<loadout id="kill-reward">
+<item material="golden apple"/>
+</loadout>
+</loadouts>
+<items>
+  <!-- remove all glass and wood when dropped -->
+  <remove-drops>
+    <any>
+      <material>leather boots</material>
+      <material>leather chestplate</material>
+	  <material>leather leggings </material>
+	  <material>leader helmet </material>
+    </any>
+  </remove-drops>
+</items>
+<objectives>
+<wools team="yellow" pickup="true">
+<wool color="cyan">
+<source>
+<block>49, 114, -107</block>
+</source>
+<destination>
+<block>235, 107, -54</block>
+</destination>
+</wool>
+<wool color="blue">
+<source>
+<block>49, 114, -1</block>
+</source>
+<destination>
+<block>236, 108, -53</block>
+</destination>
+</wool>
+</wools>
+<wools team="purple" pickup="true">
+<wool color="lime">
+<source>
+<block>190, 114, -1</block>
+</source>
+<destination>
+<block>3, 108, -53</block>
+</destination>
+</wool>
+<wool color="green">
+<source>
+<block>190, 114, -107</block>
+</source>
+<destination>
+<block>3, 108, -55</block>
+</destination>
+</wool>
+</wools>
+</objectives>
+</map>
