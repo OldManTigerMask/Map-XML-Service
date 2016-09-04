@@ -1,0 +1,68 @@
+<!Doctype XML>
+<XML>
+	<Game-Info>
+		<map-name> </map-name>
+		<contributor> </contributor>
+		<map-version> </map-version>
+		<max-players> </max-players>
+		<game-length> </game-length>
+	</Game-Info>
+	<main>
+		<teams>
+			<team>
+			<team-name> </team-name>
+			<team-color> </team-color>
+				<team-spawn> 
+				<SpawnX> </SpawnX>
+				<SpawnY> <SpawnY>
+				<SpawnZ> <SpawnZ>
+				</team-spawn>
+			<team-kit>
+				<kit-slots>
+				</kit-slots>
+				<kit-amour>
+				</kit-amour>
+				<kit-effects>
+				</kit-effects>
+				</team-kit>
+			</team>
+			<team>
+			<team-name> </team-name>
+			<team-color> </team-color>
+				<team-spawn> 
+				<SpawnX> </SpawnX>
+				<SpawnY> <SpawnY>
+				<SpawnZ> <SpawnZ>
+				</team-spawn>
+			<team-kit>
+				<kit-slots>
+				</kit-slots>
+				<kit-amour>
+				</kit-amour>
+				<kit-effects>
+				</kit-effects>
+				</team-kit>
+			</team>
+			<team>
+			<team-name> Observor </team-name>
+			<team-color> aqua</team-color>
+				<team-spawn> 
+				<SpawnX> </SpawnX>
+				<SpawnY> <SpawnY>
+				<SpawnZ> <SpawnZ>
+				</team-spawn>
+			</team>
+		</teams>
+		<objectives>
+			<monument>
+				<monument-name> </monument-name>
+				<monument-type></monument-type>
+				<monument-location> 
+					<Monument-X> </Monument-X>
+					<Monument-Y> </Monument-Y>
+					<Monument-Z> </Monument-Z>
+				</monument-location>
+			</monument>
+			</objectives>
+	</main>
+<XML>
