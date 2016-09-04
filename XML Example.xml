@@ -52,6 +52,7 @@
 				<SpawnZ> <SpawnZ>
 				</team-spawn>
 			</team>
+			/* 
 		</teams>
 		<objectives>
 			<monument>
